@@ -46,9 +46,7 @@ type ImageCheckOptions = {
         minWidth: number;
         minHeight: number;
     };
-    mediaCredits: {
-        assetCredits: AssetCredits;
-    };
+    assetCredits: AssetCredits;
 };
 
 type CheckResult = {

@@ -3,10 +3,12 @@
 
 export function checkMediaCredits(
     image: Image,
-    options: { assetCredits: AssetCredits },
+    assetCredits: AssetCredits,
     translate: TranslateMethod
 ): Promise<CheckResult> {
     const isValid = false; // TODO [SN]: Add proper validity check here
+
+    console.log(assetCredits);
 
     return Promise.resolve({
         isValid: isValid,

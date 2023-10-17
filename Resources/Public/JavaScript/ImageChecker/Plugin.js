@@ -1166,8 +1166,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkMediaCredits", function() { return checkMediaCredits; });
 // // @ts-ignore
 // import backend from '@neos-project/neos-ui-backend-connector';
-function checkMediaCredits(image, options, translate) {
+function checkMediaCredits(image, assetCredits, translate) {
     const isValid = false; // TODO [SN]: Add proper validity check here
+    console.log(assetCredits);
     return Promise.resolve({
         isValid: isValid,
         errorMessage: isValid ? '' : translate('checks.mediaCredits.error', `Media credits must be set`),
@@ -1269,6 +1270,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const ImageCheck = ({ value, options, translate }) => {
     const [image, setImage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+    const [mediaCredits, setMediaCredits] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
     const [fileNameCheck, setFileNameCheck] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
     const [fileSizeCheck, setFileSizeCheck] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
     const [fileDimensionsCheck, setFileDimensionsCheck] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
@@ -1284,8 +1286,11 @@ const ImageCheck = ({ value, options, translate }) => {
     // Refetch image data when the image identity changes
     Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
         if (typeof value !== 'string' && (value === null || value === void 0 ? void 0 : value.__identity)) {
-            const { loadImageMetadata } = _neos_project_neos_ui_backend_connector__WEBPACK_IMPORTED_MODULE_1___default.a.get().endpoints;
+            const { loadImageMetadata, searchNodes } = _neos_project_neos_ui_backend_connector__WEBPACK_IMPORTED_MODULE_1___default.a.get().endpoints;
             loadImageMetadata(value.__identity).then(setImage);
+            loadImageMetadata(value.__identity).then(setMediaCredits);
+            // console.log(searchNodes([value.__identity, 'Qweb.MediaCredits:MetaData.Credits']));
+            // console.log(backend.search(value.__identity, 'Qweb.MediaCredits:MetaData.Credits'));
         }
     }, [value]);
     // Rerun checks if image changes
@@ -1293,7 +1298,7 @@ const ImageCheck = ({ value, options, translate }) => {
         if (image) {
             Object(_Checks__WEBPACK_IMPORTED_MODULE_4__["checkFilename"])(image.originalImageResourceUri, options.fileName, translate).then(setFileNameCheck);
             Object(_Checks__WEBPACK_IMPORTED_MODULE_4__["checkFileSize"])(image.originalImageResourceUri, options.fileSize, translate).then(setFileSizeCheck);
-            Object(_Checks__WEBPACK_IMPORTED_MODULE_4__["checkMediaCredits"])(image, options.mediaCredits, translate).then(setMediaCreditsCheck);
+            Object(_Checks__WEBPACK_IMPORTED_MODULE_4__["checkMediaCredits"])(image, options.assetCredits, translate).then(setMediaCreditsCheck);
             // The dimensions check does not work for SVGs yet as the dimensions are not stored in the image metadata
             if (image.mediaType !== 'image/svg+xml') {
                 Object(_Checks__WEBPACK_IMPORTED_MODULE_4__["checkFileDimensions"])(image.originalDimensions, options.fileDimensions, translate).then(setFileDimensionsCheck);

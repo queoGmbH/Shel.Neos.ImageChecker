@@ -21,6 +21,7 @@ interface Props {
 
 const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
     const [image, setImage] = useState<Image>(null);
+    const [mediaCredits, setMediaCredits] = useState<AssetCredits>(null);
     const [fileNameCheck, setFileNameCheck] = useState<CheckResult>(null);
     const [fileSizeCheck, setFileSizeCheck] = useState<CheckResult>(null);
     const [fileDimensionsCheck, setFileDimensionsCheck] = useState<CheckResult>(null);
@@ -40,8 +41,12 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
     // Refetch image data when the image identity changes
     useEffect(() => {
         if (typeof value !== 'string' && value?.__identity) {
-            const { loadImageMetadata } = backend.get().endpoints;
+            const { loadImageMetadata, searchNodes } = backend.get().endpoints;
             loadImageMetadata(value.__identity).then(setImage);
+            loadImageMetadata(value.__identity).then(setMediaCredits);
+
+            // console.log(searchNodes([value.__identity, 'Qweb.MediaCredits:MetaData.Credits']));
+            // console.log(backend.search(value.__identity, 'Qweb.MediaCredits:MetaData.Credits'));
         }
     }, [value]);
 
@@ -50,9 +55,7 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
         if (image) {
             checkFilename(image.originalImageResourceUri, options.fileName, translate).then(setFileNameCheck);
             checkFileSize(image.originalImageResourceUri, options.fileSize, translate).then(setFileSizeCheck);
-            checkMediaCredits(image, options.mediaCredits, translate).then(
-                setMediaCreditsCheck
-            );
+            checkMediaCredits(image, options.assetCredits, translate).then(setMediaCreditsCheck);
             // The dimensions check does not work for SVGs yet as the dimensions are not stored in the image metadata
             if (image.mediaType !== 'image/svg+xml') {
                 checkFileDimensions(image.originalDimensions, options.fileDimensions, translate).then(
