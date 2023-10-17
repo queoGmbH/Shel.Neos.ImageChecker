@@ -17,6 +17,9 @@
             <trans-unit id="checks.dimensions.label">
                 <source>Dimensions</source>
             </trans-unit>
+            <trans-unit id="checks.mediaCredits.label">
+                <source>Media Credits</source>
+            </trans-unit>
             <trans-unit id="checks.dimensions.error">
                 <source><![CDATA[Image dimensions must be between <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> and <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong>]]></source>
             </trans-unit>
@@ -28,6 +31,9 @@
             </trans-unit>
             <trans-unit id="checks.fileSize.error">
                 <source><![CDATA[File size must be less or equal than <strong>{maxSize} KB</strong>]]></source>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.error">
+                <source><![CDATA[Media credits must be set]]></source>
             </trans-unit>
         </body>
     </file>

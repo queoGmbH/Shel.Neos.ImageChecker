@@ -22,6 +22,14 @@ type Image = {
     previewImageResourceUri: string;
 };
 
+type AssetCredits = {
+    mediaId: string;
+    mediaLink: string;
+    author: string;
+    authorLink: string;
+    sourceOfSupply: string;
+};
+
 type ImageCheckOptions = {
     fileName: {
         allowedPattern: string;
@@ -37,6 +45,9 @@ type ImageCheckOptions = {
         maxHeight: number;
         minWidth: number;
         minHeight: number;
+    };
+    mediaCredits: {
+        assetCredits: AssetCredits;
     };
 };
 
