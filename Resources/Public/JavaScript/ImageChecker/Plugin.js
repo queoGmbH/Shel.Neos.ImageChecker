@@ -1289,7 +1289,7 @@ const ImageCheck = ({ value, options, translate }) => {
             const { loadImageMetadata, searchNodes } = _neos_project_neos_ui_backend_connector__WEBPACK_IMPORTED_MODULE_1___default.a.get().endpoints;
             loadImageMetadata(value.__identity).then(setImage);
             loadImageMetadata(value.__identity).then(setMediaCredits);
-            // console.log(searchNodes([value.__identity, 'Qweb.MediaCredits:MetaData.Credits']));
+            // console.log(searchNodes(value.__identity, 'Qweb.MediaCredits:MetaData.Credits')); // <-- !!
             // console.log(backend.search(value.__identity, 'Qweb.MediaCredits:MetaData.Credits'));
         }
     }, [value]);

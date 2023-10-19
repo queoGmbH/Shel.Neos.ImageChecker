@@ -45,7 +45,7 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
             loadImageMetadata(value.__identity).then(setImage);
             loadImageMetadata(value.__identity).then(setMediaCredits);
 
-            // console.log(searchNodes([value.__identity, 'Qweb.MediaCredits:MetaData.Credits']));
+            // console.log(searchNodes(value.__identity, 'Qweb.MediaCredits:MetaData.Credits')); // <-- !!
             // console.log(backend.search(value.__identity, 'Qweb.MediaCredits:MetaData.Credits'));
         }
     }, [value]);

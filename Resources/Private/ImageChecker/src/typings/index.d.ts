@@ -23,11 +23,11 @@ type Image = {
 };
 
 type AssetCredits = {
-    mediaId: string;
-    mediaLink: string;
-    author: string;
-    authorLink: string;
-    sourceOfSupply: string;
+    mediaId: string; // required
+    mediaLink: string; // required
+    author?: string;
+    authorLink?: string;
+    sourceOfSupply: string; // required
 };
 
 type ImageCheckOptions = {
