@@ -3,7 +3,8 @@ export function checkFilename(
     options: { allowedPattern: string },
     translate: TranslateMethod
 ): Promise<CheckResult> {
-    const filename = pathAndFilename.split('/').pop();
+    // decode uri because otherwise spaces and umlauts are not displayed/evaluated correctly
+    const filename = decodeURI(pathAndFilename.split('/').pop());
     // TODO: Do we also need to check the extension?
     // const extension = filename.split('.').pop();
 

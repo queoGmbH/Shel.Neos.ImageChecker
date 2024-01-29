@@ -7287,14 +7287,12 @@ function checkFileDimensions(dimensions, options, translate) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkFilename", function() { return checkFilename; });
 function checkFilename(pathAndFilename, options, translate) {
-    const filename = pathAndFilename.split('/').pop();
+    // decode uri because otherwise spaces and umlauts are not displayed/evaluated correctly
+    const filename = decodeURI(pathAndFilename.split('/').pop());
     // TODO: Do we also need to check the extension?
     // const extension = filename.split('.').pop();
     const re = new RegExp(options.allowedPattern);
-    const isValid = re.test(decodeURI(filename));
-    //const isValid = re.test(decodeURI(filename));
-    console.log(decodeURI(filename));
-    //@todo: ausgabe
+    const isValid = re.test(filename);
     return Promise.resolve({
         isValid: isValid,
         errorMessage: isValid
@@ -7305,13 +7303,6 @@ function checkFilename(pathAndFilename, options, translate) {
         value: filename,
     });
 }
-// @todo:
-// todos raus
-// in image.yaml aufräumen/develop reinholen
-// Standard Default-Werte anpassen/erhöhen
-// leerzeichen, umlaute
-// Janek mal großes Bild größer 2MB please
-// yarn add axios again
 
 
 /***/ }),
