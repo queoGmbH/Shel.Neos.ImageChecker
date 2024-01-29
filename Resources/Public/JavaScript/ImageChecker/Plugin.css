@@ -72,6 +72,34 @@
     left: 108px; /* Sets the position on the right side of the standard asset buttons */
 }
 
+.ImageCheck-module__imageCheck__creditsFetchError___2JAcc {
+    margin-top: 1rem;
+}
+
+.ImageCheck-module__imageCheck__creditsFetchError___2JAcc svg {
+        color: #ff8700;
+        margin-right: .5rem;
+    }
+
+.ImageCheck-module__imageCheck__creditsInfo___1MQni {
+    margin-top: 1rem;
+}
+
+.ImageCheck-module__imageCheck__creditsInfo___1MQni svg {
+        color: #00ADEE;
+        margin-left: .5rem;
+        font-size: 1em;
+    }
+
+.ImageCheck-module__imageCheck__creditsInfo___1MQni summary {
+        cursor: pointer;
+    }
+
+.ImageCheck-module__imageCheck__creditsInfo___1MQni .ImageCheck-module__imageCheck__creditsInfoText___14_YP {
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+    }
+
 .ImageEditor-module__imageEditorContainer___22F7e {
     position: relative;
 }

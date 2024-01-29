@@ -22,17 +22,32 @@
                 <source>Dimensions</source>
                 <target>Abmessungen</target>
             </trans-unit>
-            <trans-unit id="checks.mediaCredits.label">
-                <source>Media Credits</source>
-                <target>Urhebernachweis</target>
+            <trans-unit id="checks.mediaCredits.mediaId.label">
+                <source>Media ID</source>
+                <target>Medien ID</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.mediaLink.label">
+                <source>Media Link</source>
+                <target>Medien Link</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.author.label">
+                <source>Author</source>
+                <target>Urheber</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.sourceOfSupply.label">
+                <source>Source of Supply</source>
+                <target>Bezugsquelle</target>
             </trans-unit>
             <trans-unit id="checks.dimensions.error">
-                <source><![CDATA[Image dimensions must be between <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> and <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong>]]></source>
-                <target><![CDATA[Die Bildabmessungen müssen zwischen <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> und <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong> liegen]]></target>
+                <source>
+                    <![CDATA[Image dimensions must be between <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> and <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong>]]></source>
+                <target>
+                    <![CDATA[Die Bildabmessungen müssen zwischen <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> und <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong> liegen]]></target>
             </trans-unit>
             <trans-unit id="checks.fileName.error">
                 <source><![CDATA[The filename has to match the pattern <strong>"{allowedPattern}"</strong>]]></source>
-                <target><![CDATA[Der Dateiname muss dem Muster <strong>"{allowedPattern}"</strong> entsprechen]]></target>
+                <target>
+                    <![CDATA[Der Dateiname muss dem Muster <strong>"{allowedPattern}"</strong> entsprechen]]></target>
             </trans-unit>
             <trans-unit id="checks.fileSize.fetchError">
                 <source>Could not resolve the file size</source>
@@ -40,11 +55,41 @@
             </trans-unit>
             <trans-unit id="checks.fileSize.error">
                 <source><![CDATA[File size must be less or equal than <strong>{maxSize} KB</strong>]]></source>
-                <target><![CDATA[Die Dateigröße muss kleiner oder gleich sein als <strong>{maxSize} KB</strong>]]></target>
+                <target>
+                    <![CDATA[Die Dateigröße muss kleiner oder gleich sein als <strong>{maxSize} KB</strong>]]></target>
             </trans-unit>
-            <trans-unit id="checks.mediaCredits.error">
-                <source><![CDATA[Media credits must be set]]></source>
-                <target><![CDATA[Angaben zum Urheber müssen hinterlegt sein]]></target>
+            <trans-unit id="checks.mediaCredits.mediaId.error">
+                <source>Media ID must be set</source>
+                <target>Angaben zur Medien ID müssen hinterlegt sein</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.mediaLink.error">
+                <source>Media link must be set</source>
+                <target>Angaben zum Medien Link müssen hinterlegt sein</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.author.error">
+                <source>Author must be set</source>
+                <target>Angaben zum Urheber müssen hinterlegt sein</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.sourceOfSupply.error">
+                <source>Source of supply must be set</source>
+                <target>Angaben zur Bezugsquelle müssen hinterlegt sein</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.fetchError">
+                <source>Could not resolve media credits</source>
+                <target>Die Bildnachweisdaten konnten nicht ermittelt werden</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.info.label">
+                <source>Updating the data</source>
+                <target>Aktualisierung der Daten</target>
+            </trans-unit>
+            <trans-unit id="checks.mediaCredits.info">
+                <source>If the data has not been updated after changes were done, you can switch from this view to
+                    another module/tab, briefly select a different image or reload the page
+                </source>
+                <target>Falls sich die Daten nach Änderung noch nicht aktualisiert haben, kann auf ein anderes
+                    Modul/einen anderen Tab gewechselt, kurzzeitig ein anderes Bild ausgewählt oder die Seite neu
+                    geladen werden, damit die Daten erneut abgefragt werden
+                </target>
             </trans-unit>
         </body>
     </file>

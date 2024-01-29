@@ -18,3 +18,31 @@
     top: -48px;
     left: 108px; /* Sets the position on the right side of the standard asset buttons */
 }
+
+.imageCheck__creditsFetchError {
+    margin-top: 1rem;
+
+    svg {
+        color: #ff8700;
+        margin-right: .5rem;
+    }
+}
+
+.imageCheck__creditsInfo {
+    margin-top: 1rem;
+
+    svg {
+        color: #00ADEE;
+        margin-left: .5rem;
+        font-size: 1em;
+    }
+
+    summary {
+        cursor: pointer;
+    }
+
+    .imageCheck__creditsInfoText {
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+    }
+}
